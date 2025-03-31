@@ -540,6 +540,304 @@ p {
     margin-left: -100px;
     border: 1px dashed #F2C94C;
 }
+/* membership section.......................... */
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.plan-label span{
+    background-color: #FFEDB4;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px dashed #F2C94C;
+}
+.heading h1{
+    margin-top: 20px;
+    color: #000000;
+}
+
+.plan-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.plan {
+    background-color: #ffff;
+    height: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    text-align: left;
+    border: 1px solid #B3B3B3;
+    transition: all 0.3s ease-in-out;
+}
+.plan:hover{
+    background-color: #FFEDB4;
+    transform: translateY(-10px);
+    .price{
+        background-color: #ffe283;
+    }
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.plan-title {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.price {
+    background-color: #FFEDB4;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px dashed #F2C94C;
+}
+
+.plan-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #999;
+    padding-bottom: 10px;
+}
+
+.plan-details {
+    list-style: none;
+    margin-top: 50px;
+}
+
+.plan-details li {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.plan-details li img {
+    width: 18px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.btn-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: #F3F3F3;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    margin-left: 120px;
+    margin-top: 50px;
+}
+.btn-container:hover{
+    background-color: #000;
+    color: white;
+}
+.btn-arrow-container {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    position: relative;
+    transition: all 0.3s;
+}
+.btn-arrow-container:hover{
+    transform: translateY(-10px);
+}
+.btn-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3d2e2a;
+    font-weight:bolder;
+}
+
+
+.mem-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.m-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.m-dot.active {
+    background-color: #FFC107;
+    width: 25px;
+    border-radius: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+/* news & update section...................... */
+.news-update{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 100px;
+    text-transform: uppercase;
+
+}
+.container-two {
+    width: 100%;
+    max-width: 1380px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.left-section {
+    background-image: url('./image17.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    height: 450px;
+    width: 750px;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 100px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px ;
+    max-width: 50%;
+}
+
+.overlay h3 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.overlay p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.right-section {
+    position: relative;
+    width: 570px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    opacity: 50%;
+    transition: filter 0.3s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    margin-left: -20px;
+    padding: 20px 10px;
+    background-color: #FFC107;
+}
+
+.carousel-date span {
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 10px;
+    position: relative;
+}
+
+.carousel-date span::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    width: 180px;
+    height: 0.1px;
+    background-color: white;
+    transform: translateX(-50%);
+}
+
+.carousel-text {
+    font-size: 14px;
+}
+
+.scroll-btns {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #FFC107;
+    width: 25px;
+    border-radius: 10px;
+}
+
+
+
 /* newsletter section.............. */
 .banner {
     width: 100%;
