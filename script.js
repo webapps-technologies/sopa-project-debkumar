@@ -32,3 +32,55 @@ const dots = document.querySelectorAll('.dot');
                 }
             });
         }
+
+        // ...............................
+        window.onload = function() {
+            showTab('soybean-testing-lab');
+            
+            const secondCard = document.querySelectorAll('.card')[1];
+            secondCard.classList.add('active-card');
+            secondCard.style.backgroundColor = '#FFDE82';
+        }
+        
+        function showTab(tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.classList.remove('active-card');
+                card.style.backgroundColor = '#FFF9E5';
+            });
+            
+            let activeCard;
+            switch(tabId) {
+                case 'soybean-dev-program1':
+                    activeCard = cards[0];
+                    activeCard.style.backgroundColor = '#FFDE82';
+                    activeCard.style.height="300px";
+                    break;
+                case 'soybean-testing-lab':
+                    activeCard = cards[1];
+                    activeCard.style.backgroundColor = '#FFDE82';
+                    break;
+                case 'membership':
+                    activeCard = cards[2];
+                    activeCard.style.backgroundColor = '#FFDE82';
+                    break;
+                case 'soybean-dev-program2':
+                    activeCard = cards[3];
+                    activeCard.style.backgroundColor = '#FFDE82';
+                    break;
+            }
+            
+            if (activeCard) {
+                activeCard.classList.add('active-card');
+            }
+        }
