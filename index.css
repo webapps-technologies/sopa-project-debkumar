@@ -21,7 +21,7 @@ body {
     padding: 0 ;
     margin: 0;
     overflow-x: hidden;
-  }
+}
 nav{
     width: 100%;
     background-color: #1F1A17;
@@ -180,6 +180,36 @@ nav{
     margin-left: 5px;
     vertical-align: middle;
 }
+/* ........................... */
+/* @media (max-width: 920px){
+    .nav-container .menu-btn i{
+        display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    .nav-container .nav-menu{
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        background: #111;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+        z-index: 99999;
+    }
+    #click:checked ~ .nav-menu{
+        left: 0;
+    }
+    .nav-container .nav-menu .nav-item{
+        width: 100%;
+        margin: 40px 0;
+    }
+
+    
+} */
 /* hero section....................... */
 
 .hero {
@@ -1007,6 +1037,7 @@ p {
     padding: 20px;
     position: relative;
     text-align: left;
+    min-width: 33.33%;
     border: 1px solid #B3B3B3;
     transition: all 0.3s ease-in-out;
 }
@@ -1106,7 +1137,7 @@ p {
 }
 
 
-.mem-dots {
+/* .mem-dots {
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -1125,11 +1156,63 @@ p {
     background-color: #FFC107;
     width: 25px;
     border-radius: 10px;
-}
+} */
 
 input[type="radio"] {
     display: none;
 }
+
+.container-member {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.item-member {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    /* margin-top: 30px; */
+}
+
+.icon-member {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    /* margin-top: 4px; */
+}
+
+.item-member p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.carousel-member-wrapper { 
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    gap: 10px;
+}
+.mem-dots {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+.m-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.m-dot.active {
+    background-color: #FFC107;
+    width: 25px;
+    border-radius: 10px;
+}
+
 /* news & update section...................... */
 .news-update{
     text-align: center;
@@ -1538,6 +1621,4 @@ input[type="radio"] {
     right: 0;
     transform: translateY(-50%);
 }
-
-
 
