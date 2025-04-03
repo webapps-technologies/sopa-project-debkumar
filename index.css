@@ -432,98 +432,76 @@ nav{
     width: 100%;
     max-width: 1380px;
     margin: auto;
-    /* text-align: center; */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 900px;
 }
+
 .text-content {
     position: absolute;
     width: 300px;
     font-size: 16px;
     margin-top: 100px;
-    /* background: white; */
-    /* padding: 15px; */
-    /* border-radius: 10px; */
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
 }
+
 .top-right {
     width: 500px;
-    top: 10%;
-    right: 0;
+    top: 22%;
     left: 67%;
 }
-.eve{
-    font-size: 25px;
-    margin-left: 120px;
-    margin-bottom: -50px;
-    margin-top: 30px;
 
-}
-.line-5{
-    background-color: #F8C400;
-    width: 130px;
-    margin-top: 60px;
-    margin-left: 120px;
-
-}
-.para{
-    position: relative;
-    margin-top: 30px;
-    /* margin-left: -160px; */
-    margin-right: 60px;
-    letter-spacing: 0%;
-    opacity: 88%;
-    line-height: 38px;
-}
-.event{
-    margin-top: 10px;
-    margin-left: 120px;
-    font-size: 20px;
-    font-weight: 700;
-}
 .top-left {
-    width: 450px;
+    width: 480px;
     top: 15%;
     left: 0%;
 }
-.eve1{
-    font-size: 25px;
-}
-.event1{
-    font-weight: 700;
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-.line-6{
-    background-color: #F8C400;
-    width: 138px;
-}
-.para1{
-    letter-spacing: 0%;
-    opacity: 88%;
-    line-height: 38px;
-}
 
 .bottom-center {
-    bottom: -50px;
-    left: 50%;
-    /* transform: translateX(-50%); */
+    bottom: 27px;
+    left: 51%;
 }
+.bottom-center h3{
+    font-size: 20px;
+}
+.bottom-center p{
+    margin-top: 10px;
+    width: 650px;
+    margin-left: -80px;
+}
+
 .main-image {
-    /* margin-top: -50px; */
     width: 30%;
-    /* display: block; */
     border-radius: 10px;
+}
+.line-5{
+    margin-left: 130px;
+    margin-bottom: 10px;
+    width: 21%;
+    height: 2px;
+    background-color: #F8C400;
+}
+.eve{
+    margin-top: -70px;
+    font-size: 22px;
+    font-weight: 400;
+    margin-left: 130px;
+}
+.event{
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 130px;
+}
+.para{
+    opacity: 78%;
+    line-height: 38px;
+    width: 90%;
 }
 .overlay {
     position: absolute;
     background: transparent;
-    /* width: 120px; */
     border-radius: 10px;
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
 }
 .overlay-top-right {
     width: 20%;
@@ -535,6 +513,101 @@ nav{
     bottom: 15%;
     left: 25%;
 }
+.svg-overlay {
+    position: absolute;
+    top: 15%;
+    left: 848px;
+    width: 450px;
+    height: 200px;
+    pointer-events: none;
+}
+
+.dotted-path {
+    stroke-dasharray: 5, 5;
+    stroke: #F8C400;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+}
+.blinking-dot {
+    fill: #F8C400;
+    animation: blink 0.5s infinite alternate;
+}
+
+.svg-overlayy {
+    position: absolute;
+    top: 66%;
+    margin-left: -700px;
+    width: 700px;
+    height: 200px;
+    pointer-events: none;
+    rotate: 180deg;
+}
+.dotted-pathh {
+    stroke-dasharray: 5, 5;
+    stroke: #F8C400;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+}
+.blinking-dott {
+    fill: #F8C400;
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+.eve1{
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    
+    
+}
+.line-6{
+    width: 30%;
+    height: 2px;
+    background-color: #F8C400;
+    margin-bottom: 15px;
+}
+.event1{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.para1{
+    line-height: 38px;
+    opacity: 78%;
+}
+.svg-overlayyy {
+    position: absolute;
+    top: 2%;
+    left: 0%;
+    margin-left:30px;
+    height: 270px;
+    pointer-events: none;
+    rotate: 180deg;
+}
+.dotted-pathhh {
+    stroke-dasharray: 5, 5;
+    stroke: black;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.blinking-dottt {
+    fill: black;
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+             
 
 /* SOPA DEVELOPMENT PROGRAM..................... */
 .experience-pill {

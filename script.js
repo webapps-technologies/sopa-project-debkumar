@@ -64,7 +64,7 @@ const dots = document.querySelectorAll('.dot');
                 case 'soybean-dev-program1':
                     activeCard = cards[0];
                     activeCard.style.backgroundColor = '#FFDE82';
-                    activeCard.style.height="300px";
+                    // activeCard.style.height="300px";
                     break;
                 case 'soybean-testing-lab':
                     activeCard = cards[1];
