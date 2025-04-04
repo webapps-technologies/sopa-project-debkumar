@@ -117,12 +117,12 @@ nav{
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    max-width: 100%;
+    width: 100%;
     margin: auto;
     
 }
 .line {
-    width: 1700px;
+    width: 2600px;
     height: 1px;
     background-color: #fff;
 }
@@ -531,9 +531,9 @@ nav{
 .overlay {
     position: absolute;
     background: transparent;
-    border-radius: 10px;
 }
 .overlay-top-right {
+    border-radius: 50%;
     width: 20%;
     top: 5%;
     right: 25%;
@@ -731,7 +731,7 @@ nav{
     color: #333;
 }
 .analysis-text {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 1.5;
     color: #333;
 }
@@ -739,6 +739,7 @@ nav{
     display: inline-flex;
     align-items: center;
     background-color: #F3F3F3;
+    color: black;
     padding: 10px 20px;
     border-radius: 30px;
     border: 1px solid black;
@@ -746,7 +747,9 @@ nav{
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    color: black;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 50px;
 }
 .container-btn:hover {
     background-color: #000;
@@ -1137,27 +1140,6 @@ p {
 }
 
 
-/* .mem-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.m-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #ccc;
-    margin: 0 3px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.m-dot.active {
-    background-color: #FFC107;
-    width: 25px;
-    border-radius: 10px;
-} */
-
 input[type="radio"] {
     display: none;
 }
@@ -1212,6 +1194,8 @@ input[type="radio"] {
     width: 25px;
     border-radius: 10px;
 }
+
+
 
 /* news & update section...................... */
 .news-update{
@@ -1621,4 +1605,144 @@ input[type="radio"] {
     right: 0;
     transform: translateY(-50%);
 }
+
+
+
+
+
+@media (max-width: 1400px) {
+    .html,body{
+        width: 100%;
+        height: 100%;
+        padding: 0 ;
+        margin: 0;
+        overflow-x: hidden;
+      }
+    .container {
+      width: 100%;
+      padding: 0 15px;
+    }
+    .nav-container{
+        margin: 0;
+        padding: 0;
+    }
+  
+    .auction-card,
+    .auction-card-one,
+    .auction-card-two {
+      width: 23%;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .html,body{
+        width: 100%;
+        height: 100%;
+        padding: 0 ;
+        margin: 0;
+        overflow-x: hidden;
+      }
+    .nav-item {
+      padding: 0 5px;
+      font-size: 13px;
+    }
+  
+    .vertical-line {
+      margin-left: 15px;
+    }
+  
+    .right-line {
+      margin-right: 20px;
+    }
+  
+    .logo-container {
+      margin-left: 20px;
+    }
+  
+    .about-sopa {
+      margin-left: 20px;
+    }
+  
+    .hero-content {
+      left: 40px;
+    }
+  
+    .container-story {
+      height: auto;
+      padding: 50px 0;
+    }
+  
+    .text-content {
+      position: relative;
+      margin: 30px auto;
+    }
+  
+    .top-right {
+      top: auto;
+      left: auto;
+    }
+  
+    .top-left {
+      top: auto;
+      left: auto;
+    }
+  
+    .bottom-center {
+      bottom: auto;
+      left: auto;
+    }
+  
+    .bottom-center p {
+      margin-left: 0;
+      width: 100%;
+    }
+  
+    .main-image {
+      width: 50%;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .svg-overlay,
+    .svg-overlayy,
+    .svg-overlayyy {
+      display: none;
+    }
+  
+    .card {
+      width: 22%;
+    }
+  
+    .container-one {
+      flex-direction: column;
+    }
+  
+    .chairman-photo {
+      margin: 0 auto;
+    }
+  
+    .content-one h1 {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .experience-btn {
+      margin-left: 0;
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+    }
+  
+    .plan-container {
+      gap: 10px;
+    }
+  
+    .plan {
+      padding: 15px;
+    }
+  
+    .left-section {
+      width: 100%;
+    }
+  }
 
