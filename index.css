@@ -111,6 +111,7 @@ nav{
 .icon-circle:hover {
     background-color: #555;
 }
+/* nav container...................... */
 
 .nav-container {
     background-color: #3d2e2a;
@@ -161,55 +162,135 @@ nav{
     margin-left: 50px;
 }
 
-.nav-menu {
+.nav-container ul {
     display: flex;
     margin-left: auto;
+    list-style: none;
+    
 }
-
-.nav-item {
+.nav-container ul li a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.nav-container li {
+    
     color: white;
     padding: 0 10px;
     cursor: pointer;
     position: relative;
     font-size: 14px;
 }
-
-.nav-item:after {
-    content: "▼";
-    font-size: 8px;
-    margin-left: 5px;
+.nav-container ul li a span{
+    width: 10px;
+    font-size: 10px;
+    margin-left: 2px;
     vertical-align: middle;
 }
-/* ........................... */
-/* @media (max-width: 920px){
-    .nav-container .menu-btn i{
-        display: block;
-    }
-    #click:checked ~ .menu-btn i:before{
-        content: "\f00d";
-    }
-    .nav-container .nav-menu{
-        position: fixed;
-        top: 100px;
-        left: -100%;
-        background: #111;
-        height: 100vh;
-        width: 100%;
-        text-align: center;
-        display: block;
-        transition: all 0.3s ease;
-        z-index: 99999;
-    }
-    #click:checked ~ .nav-menu{
-        left: 0;
-    }
-    .nav-container .nav-menu .nav-item{
-        width: 100%;
-        margin: 40px 0;
-    }
+.nav-container ul li a.active,
+.nav-container ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+.nav-container .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
 
+@media (max-width: 768px) {
+    .nav-container .about-sopa{
+        width: 150px;
+    }
     
-} */
+    .nav-container .menu-btn i{
+      display: block;
+      margin-left: 410px;
+      /* margin-right: -10px; */
+    }
+    
+    #click:checked ~ .menu-btn i:before{
+      content: "\f00d";
+    }
+    .nav-container ul{
+      position: fixed;
+      top: 110px;
+      left: -100%;
+      background: #111;
+      height: auto;
+      width: 768px;
+      text-align: center;
+      display:block;
+      transition: all 0.3s ease;
+      z-index: 99999;
+      
+    }
+    #click:checked ~ ul{
+      left: 0;
+    }
+    .nav-container ul li{
+      width: 100%;
+      margin: 40px 0;
+    }
+    .nav-container ul li a{
+      width: 100%;
+      margin-left: -100%;
+      display: block;
+      font-size: 20px;
+    }
+    #click:checked ~ ul li a{
+      margin-left: 0px;
+    }
+    .nav-container ul li a.active,
+    .nav-container ul li a:hover{
+      background: none;
+      color: rgb(48, 32, 118);
+    }
+}
+@media (max-width: 426px) {
+    .nav-container .about-sopa{
+        width: 170px;
+    }
+    
+    .nav-container .menu-btn i{
+      display: block;
+      margin-left: 10px;
+    }
+    .nav-container ul{
+      position: fixed;
+      top: 110px;
+      left: -100%;
+      background: #111;
+      height: auto;
+      width: 425px;
+      text-align: center;
+      display:block;
+      transition: all 0.3s ease;
+      z-index: 99999;
+      
+    }
+    
+    .nav-container ul li{
+      width: 100%;
+      margin: 40px 0;
+    }
+    .nav-container ul li a{
+      width: 100%;
+      margin-left: -100%;
+      display: block;
+      font-size: 20px;
+    }
+    .nav-container ul li a.active,
+    .nav-container ul li a:hover{
+      background: none;
+      color: blue;
+    }
+}
+  
 /* hero section....................... */
 
 .hero {
@@ -1025,12 +1106,12 @@ p {
     color: #000000;
 }
 
-.plan-container {
+/* .plan-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     width: 100%;
-}
+} */
 
 .plan {
     background-color: #ffff;
@@ -1268,7 +1349,7 @@ input[type="radio"] {
 .carousel-item {
     background-color: #f9f9f9;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #FFC107;
     border-radius: 5px;
     margin-bottom: 10px;
     display: flex;
@@ -1343,7 +1424,7 @@ input[type="radio"] {
 /* newsletter section.............. */
 .banner {
     width: 100%;
-    height: 180px;
+    height: auto;
     margin: 20px auto;
     background-color: #FFC700;
     padding: 20px 30px;
@@ -1610,7 +1691,7 @@ input[type="radio"] {
 
 
 
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
     .html,body{
         width: 100%;
         height: 100%;
@@ -1620,17 +1701,27 @@ input[type="radio"] {
       }
     .container {
       width: 100%;
-      padding: 0 15px;
+      padding: 0 10px;
     }
     .nav-container{
         margin: 0;
         padding: 0;
     }
+    .vertical-line {
+        margin-left: 40px;
+    }
+    .left-line{
+        margin-left: -15px;
+    }
   
     .auction-card,
     .auction-card-one,
     .auction-card-two {
-      width: 23%;
+      width: 24%;
+      margin-top: -20px;
+    }
+    .overlay{
+        background: transparent;
     }
   }
 
@@ -1641,9 +1732,12 @@ input[type="radio"] {
         padding: 0 ;
         margin: 0;
         overflow-x: hidden;
-      }
+    }
+    .container{
+        padding: 0 15px;
+    }
     .nav-item {
-      padding: 0 5px;
+      padding: 0 15px;
       font-size: 13px;
     }
   
@@ -1664,61 +1758,91 @@ input[type="radio"] {
     }
   
     .hero-content {
-      left: 40px;
+      left: 20px;
     }
-  
+    .left-line{
+        margin-left: -20px;
+    }
+    .auction-card,
+    .auction-card-one,
+    .auction-card-two {
+      width: 25%;
+    }
     .container-story {
-      height: auto;
-      padding: 50px 0;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 100px 0;
     }
-  
+
     .text-content {
-      position: relative;
-      margin: 30px auto;
+        position: relative;
+        text-align: center;
+        width: 90%;
+        max-width: 450px;
     }
-  
-    .top-right {
-      top: auto;
-      left: auto;
+
+    .top-left, .top-right, .bottom-center {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        top: auto;
     }
-  
-    .top-left {
-      top: auto;
-      left: auto;
+    .bottom-center>p{
+        padding: 0 100px;
     }
-  
-    .bottom-center {
-      bottom: auto;
-      left: auto;
-    }
-  
-    .bottom-center p {
-      margin-left: 0;
-      width: 100%;
-    }
-  
+
     .main-image {
-      width: 50%;
-      margin: 0 auto;
-      display: block;
+        width: 80%;
+        max-width: 400px;
     }
-  
-    .svg-overlay,
-    .svg-overlayy,
-    .svg-overlayyy {
-      display: none;
+
+    .overlay-top-right, .overlay-bottom-left {
+        width: 100%;
+        max-width: 200px;
     }
-  
+    .overlay-top-right{
+        margin-top: -60px;
+    }
+    .overlay-bottom-left{
+        margin-bottom: 960px;
+        margin-left: -40px;
+    }
+    .line-6{
+        margin-left: 180px;
+    }
+    .eve{
+        top: 2%;
+        margin-left: -10px;
+        margin-top: 5px;
+    }
+    .event{
+        margin-left: -10px;
+    }
+    .line-5{
+        margin-left: 190px;
+    }
+
+    .svg-overlay, .svg-overlayy, .svg-overlayyy {
+        display: none; 
+    }
     .card {
       width: 22%;
     }
+    .analysis-section{
+        gap: 150px;
+    }
   
     .container-one {
-      flex-direction: column;
+        margin-left: -30px;
+      /* flex-direction: column; */
     }
   
     .chairman-photo {
-      margin: 0 auto;
+      /* margin: 0 auto; */
     }
   
     .content-one h1 {
@@ -1727,22 +1851,188 @@ input[type="radio"] {
     }
   
     .experience-btn {
+      
+    }
+    
+  
+    .plan {
+        height: 800px;
+      /* padding: 15px; */
+    }
+    .btn-container{
+        display: inline-flex;
+        width: 60%;
+        margin-left: 50px;
+    }
+    .container-two{
+        margin: 0 10px;
+    }
+  
+    .left-section {
+
+      width: 530px;
+    }
+    
+    .right-section{
+        width: 450px;
+    }
+    .footer-links{
+        width: 70%;
+        
+    }
+    .footer-bottom-links{
+        width: 45%;
+    }
+    .line1{
+        width: 45.6%;
+    }
+    .line2{
+        width: 45.6%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero{
+        /* min-height: 800px; */
+    }
+  
+    .auction-card,
+    .auction-card-one,
+    .auction-card-two {
+      width: 50%;
+      height: 100px;
+      /* margin-bottom: -40px; */
+      margin-top: -70px;
+    }
+    
+    .first-one{
+        border-top-right-radius: 10px;
+        border-right: 0px solid black;
+    }
+  
+    .auction-card-two {
+        border-top-right-radius: 0px;
+    }
+    .overlay-top-right{
+        top: 4%;
+        left: 65%;
+    }
+    .overlay-bottom-left{
+        left: 14%;
+    }
+  
+    .card {
+      width: 45%;
+      margin-bottom: 20px;
+    }
+  
+    .analysis-section {
+      gap: 0px;
+    }
+    .analysis-content{
+        width: 60%;
+    }
+    .chairman{
+        padding-left: 100px;
+    }
+    .container-one{
+        flex-direction: column;
+    }
+    .content-one{
+        padding: 0 100px;
+        /* width: 80%; */
+    }
+    .quote-icon{
+        margin-left: 80px;
+    }
+    .experience-btn{
+        margin-left: 200px;
+    }
+    .container-two{
+        grid-template-columns: 1fr;
+    }
+    .left-section{
+        width: 97%;
+    }
+    .right-section{
+        width: 97%;
+    }
+    
+  
+    .prog-section {
+      flex-wrap: wrap;
+      height: auto;
+    }
+  
+    .box {
+      width: 48%;
+      margin-bottom: 20px;
+      height: 300px;
+    }
+  
+    .plan {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .btn-container {
       margin-left: 0;
       display: block;
       width: fit-content;
       margin: 20px auto;
     }
   
-    .plan-container {
-      gap: 10px;
+    .footer-column {
+      width: 20%;
     }
-  
-    .plan {
-      padding: 15px;
+    .footer-bottom-links>a{
+        margin-bottom: 30px;
     }
-  
-    .left-section {
-      width: 100%;
+    .line1{
+        width: 44.2%;
     }
+    .line2{
+        width: 44.2%;
+    }
+    
+  }
+  @media screen and (max-width: 426px){
+    .auction-container{
+        display: none;
+    }
+    .main-image {
+        width: 50%;
+    }
+    .overlay{
+        width: 30%;
+        background: transparent;
+    }
+    .overlay-top-right{
+        /* margin-top: 0px; */
+        left: 60%;
+        top: 7%;
+    }
+    .overlay-bottom-left{
+        left: 18%;
+        bottom: 15%;
+    }
+    .text-content{
+        width: 80%;
+        max-width: 425px;
+    }
+    .top-right{
+        padding-left: 10px;
+    }
+    .bottom-center>p{
+        padding-right: 250px;
+        margin-bottom: -50px;
+    }
+    .line-6 {
+        display: none;
+    }
+    .line-5{
+        display: none;
+    }
+
   }
 

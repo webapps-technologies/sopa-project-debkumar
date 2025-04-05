@@ -1,3 +1,5 @@
+
+//news & update part.....................................
 const dots = document.querySelectorAll('.dot');
         const carousel = document.getElementById('carousel');
         const items = document.querySelectorAll('.carousel-item');
@@ -33,7 +35,7 @@ const dots = document.querySelectorAll('.dot');
             });
         }
 
-        // ...............................
+        // first SOPA  DEVELOPMENT PROGRAM part...............................
         window.onload = function() {
             showTab('soybean-testing-lab');
             
@@ -87,7 +89,7 @@ const dots = document.querySelectorAll('.dot');
 
 
 
-
+        //pricing, membership part..........................
         let index = 0;
         function moveCarousel(step) {
             index = step;
