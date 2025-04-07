@@ -36,7 +36,6 @@ nav{
     background-color: #1F1A17;
     color: white;
     padding: 10px 0;
-    /* margin: 0 70px; */
     position: relative;
 }
 
@@ -252,6 +251,9 @@ input[type="checkbox"]{
     }
 }
 @media (max-width: 426px) {
+    .latest-update{
+        width: 100px;
+    }
     .nav-container .about-sopa{
         width: 170px;
     }
@@ -289,6 +291,18 @@ input[type="checkbox"]{
       background: none;
       color: blue;
     }
+}
+@media (max-width: 376px){
+    .nav-container ul{
+        width: 375px;
+        
+      }
+}
+@media (max-width: 320px){
+    .nav-container ul{
+        width: 320px;
+        
+      }
 }
   
 /* hero section....................... */
@@ -609,7 +623,7 @@ input[type="checkbox"]{
     line-height: 38px;
     width: 90%;
 }
-.overlay {
+.container-story .overlay {
     position: absolute;
     background: transparent;
 }
@@ -674,8 +688,6 @@ input[type="checkbox"]{
     font-size: 22px;
     font-weight: 400;
     margin-bottom: 5px;
-    
-    
 }
 .line-6{
     width: 30%;
@@ -754,6 +766,10 @@ input[type="checkbox"]{
     transition: background-color 0.3s ease;
     position: relative;
     padding: 10px 10px 0 10px;
+    transition: all 0.3s;
+}
+.card:hover{
+    transform: translateY(40px);
 }
 .card::after {
     content: '';
@@ -922,7 +938,6 @@ input[type="checkbox"]{
 }
 
 .chairman-photo {
-    /* flex: 0 0 40%; */
     padding-right: 0px;
     position: relative;
 }
@@ -937,7 +952,6 @@ input[type="checkbox"]{
 .photo-frame img {
     width: 620px;
     height: 765px;
-    display: block;
     border-radius: 35px;
 }
 
@@ -1105,25 +1119,23 @@ p {
     margin-top: 20px;
     color: #000000;
 }
-
-/* .plan-container {
+.carousel-member-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    width: 100%;
-} */
+}
 
 .plan {
-    background-color: #ffff;
-    height: 700px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    position: relative;
-    text-align: left;
-    min-width: 33.33%;
-    border: 1px solid #B3B3B3;
-    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
 }
 .plan:hover{
     background-color: #FFEDB4;
@@ -1136,7 +1148,14 @@ p {
 .plan-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
     margin-bottom: 10px;
+}
+.plan-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .plan-title {
@@ -1156,26 +1175,9 @@ p {
 .plan-name {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     border-bottom: 1px dotted #999;
     padding-bottom: 10px;
-}
-
-.plan-details {
-    list-style: none;
-    margin-top: 50px;
-}
-
-.plan-details li {
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-.plan-details li img {
-    width: 18px;
-    margin-right: 10px;
-    margin-top: 3px;
 }
 
 .btn-container {
@@ -1191,7 +1193,7 @@ p {
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    margin-left: 120px;
+    margin-left: 80px;
     margin-top: 50px;
 }
 .btn-container:hover{
@@ -1219,41 +1221,25 @@ p {
     color: #3d2e2a;
     font-weight:bolder;
 }
-
-
-input[type="radio"] {
-    display: none;
-}
-
 .container-member {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin-bottom: 15px;
 }
-
 .item-member {
     display: flex;
     align-items: flex-start;
+    gap: 10px;
     margin-bottom: 10px;
-    /* margin-top: 30px; */
 }
 
 .icon-member {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    /* margin-top: 4px; */
 }
 
 .item-member p {
-    margin-bottom: 10px;
     font-size: 14px;
-    line-height: 20px;
-}
-.carousel-member-wrapper { 
-    display: flex;
-    transition: transform 0.5s ease-in-out; 
-    gap: 10px;
+    margin: 0;
 }
 .mem-dots {
     display: flex;
@@ -1275,8 +1261,27 @@ input[type="radio"] {
     width: 25px;
     border-radius: 10px;
 }
-
-
+@media (min-width: 768px) {
+    .plan {
+        max-width: 45%;
+    }
+    .btn-container{
+        margin-left: 50px;
+    }
+}
+@media (min-width: 1024px) {
+    .plan {
+        max-width: 30%;
+    }
+    .btn-container{
+        margin-left: 50px;
+    }
+}
+@media (min-width: 1440px) {
+    .plan {
+        max-width: 28%;
+    }
+}
 
 /* news & update section...................... */
 .news-update{
@@ -1325,6 +1330,7 @@ input[type="radio"] {
 .overlay p {
     font-size: 14px;
     line-height: 1.5;
+    color: #0F0C0C;
 }
 
 .right-section {
@@ -1687,18 +1693,7 @@ input[type="radio"] {
     transform: translateY(-50%);
 }
 
-
-
-
-
 @media (max-width: 1440px) {
-    .html,body{
-        width: 100%;
-        height: 100%;
-        padding: 0 ;
-        margin: 0;
-        overflow-x: hidden;
-      }
     .container {
       width: 100%;
       padding: 0 10px;
@@ -1720,19 +1715,10 @@ input[type="radio"] {
       width: 24%;
       margin-top: -20px;
     }
-    .overlay{
-        background: transparent;
-    }
+
   }
 
   @media screen and (max-width: 1200px) {
-    .html,body{
-        width: 100%;
-        height: 100%;
-        padding: 0 ;
-        margin: 0;
-        overflow-x: hidden;
-    }
     .container{
         padding: 0 15px;
     }
@@ -1838,31 +1824,11 @@ input[type="radio"] {
   
     .container-one {
         margin-left: -30px;
-      /* flex-direction: column; */
-    }
-  
-    .chairman-photo {
-      /* margin: 0 auto; */
     }
   
     .content-one h1 {
       margin-left: 0;
       text-align: center;
-    }
-  
-    .experience-btn {
-      
-    }
-    
-  
-    .plan {
-        height: 800px;
-      /* padding: 15px; */
-    }
-    .btn-container{
-        display: inline-flex;
-        width: 60%;
-        margin-left: 50px;
     }
     .container-two{
         margin: 0 10px;
@@ -1892,16 +1858,12 @@ input[type="radio"] {
   }
 
   @media screen and (max-width: 768px) {
-    .hero{
-        /* min-height: 800px; */
-    }
   
     .auction-card,
     .auction-card-one,
     .auction-card-two {
       width: 50%;
       height: 100px;
-      /* margin-bottom: -40px; */
       margin-top: -70px;
     }
     
@@ -1940,7 +1902,6 @@ input[type="radio"] {
     }
     .content-one{
         padding: 0 100px;
-        /* width: 80%; */
     }
     .quote-icon{
         margin-left: 80px;
@@ -1957,31 +1918,15 @@ input[type="radio"] {
     .right-section{
         width: 97%;
     }
-    
-  
     .prog-section {
       flex-wrap: wrap;
       height: auto;
     }
-  
     .box {
       width: 48%;
       margin-bottom: 20px;
       height: 300px;
     }
-  
-    .plan {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    .btn-container {
-      margin-left: 0;
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
-    }
-  
     .footer-column {
       width: 20%;
     }
@@ -2008,7 +1953,6 @@ input[type="radio"] {
         background: transparent;
     }
     .overlay-top-right{
-        /* margin-top: 0px; */
         left: 60%;
         top: 7%;
     }
@@ -2033,6 +1977,162 @@ input[type="radio"] {
     .line-5{
         display: none;
     }
-
+    .card{
+        height: 270px;
+    }
+    .analysis-section{
+        flex-direction: column;
+    }
+    .analysis-content{
+        width: 100%;
+    }
+    .analysis-buttons{
+        margin-top: 40px;
+    }
+    .dots-bg-right{
+        width: 150px;
+        margin-left: -65px;
+        margin-top: 20px;
+    }
+    .dots-bg-left{
+        width: 150px;
+        margin-top: 60px;
+        margin-left: 135px;
+    }
+    .photo-frame{
+        margin-left: -200px;
+    }
+    .content-one{
+        width: 500px;
+        margin-left: -25px;
+    }
+    .quote-icon{
+        margin-left: -40px;
+    }
+    .experience-btn{
+        margin-left: 50px;
+    }
+    .left-section .overlay{
+        width: 80%;
+    }
+    .banner{
+        flex-direction: column;
+    }
+    .footer-bottom-links{
+        margin-bottom: 60px;
+    }
+    .social-text{
+        margin-left: -50px;
+    }
+    .line1{
+        width: 39.3%;
+    }
+    .line2{
+        width: 39.3%;
+    }
+    .prog-content h2{
+        font-size: 15px;
+    }
+    .prog-content p{
+        font-size: 12px;
+    }
   }
+  
+  @media screen and (max-width: 376px){
+    .overlay-bottom-left{
+        top: 17%;
+    }
+    .bottom-center p{
+        margin-left: -110px;
+    }
+    .dots-bg-left{
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+    .dots-bg-right{
+        margin-left: -25px;
+        bottom: 68%;
+    }
+    .photo-frame img{
+        margin-left: 110px;
+        margin-top: 50px;
+        width: 350px;
+        height: 400px;
+    }
+    .content-one{
+        margin-left: -70px;
+    }
+    .experience-btn{
+        margin-left: 60px;
+    }
+    .newsletter{
+        margin-left: 80px;
+    }
+    .line1{
+        width: 37.5%;
+    }
+    .line2{
+        width: 37.5%;
+    }
+    .heading h1{
+        font-size: 28px;
+    }
+    .footer-bottom-links a{
+        font-size: 12px;
+    }
+  }
+  @media screen and (max-width: 320px){
+    .overlay-bottom-left{
+        margin-top: -40px;
+    }
+    .bottom-center p{
+        margin-left: -125px;
+    }
+    .dots-bg-left{
+        margin-left: 38px;
+        margin-top: 30px;
+    }
+    .dots-bg-right{
+        margin-left: -45px;
+        bottom: 68%;
+    }
+    .photo-frame img{
+        margin-left: 90px;
+        margin-top: 50px;
+        width: 350px;
+        height: 400px;
+    }
+    .content-one h1{
+        font-size: 25px;
+    }
+    .content-one p{
+        font-size: 15px;
+        width: 90%;
+    }
+    .quote-icon{
+        margin-left: 15px;
+    }
+    .prog-content p{
+        font-size: 9px;
+    }
+    .btn-container{
+        margin-left: 25px;
+    }
+    .container-two .overlay{
+        margin-bottom: -20px;
+    }
+    .newsletter{
+        width: 110%;
+    }
+    .footer-bottom-links a{
+        font-size: 10px;
+    }
+    .line1{
+        width: 36%;
+    }
+    .line2{
+        width: 36%;
+    }
+  }
+ 
 

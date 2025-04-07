@@ -86,17 +86,5 @@ const dots = document.querySelectorAll('.dot');
                 activeCard.classList.add('active-card');
             }
         }
-
-
-
-        //pricing, membership part..........................
-        let index = 0;
-        function moveCarousel(step) {
-            index = step;
-            document.getElementById('carousel_member').style.transform = `translateX(-${step * 100 / 3}%)`;
-            document.querySelectorAll('m-dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === step);
-            });
-        }
         
         
