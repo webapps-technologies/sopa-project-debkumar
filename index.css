@@ -7,20 +7,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
     
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    overflow-x: hidden;
-    
-}
-.html,body{
-    width: 100%;
-    height: 100%;
-    padding: 0 ;
-    margin: 0;
-    overflow-x: hidden;
+    font-family: "Inter", sans-serif; 
 }
 nav{
     width: 100%;
@@ -122,7 +114,7 @@ nav{
     
 }
 .line {
-    width: 2600px;
+    width: 100%;
     height: 1px;
     background-color: #fff;
 }
@@ -571,7 +563,7 @@ input[type="checkbox"]{
 }
 
 .top-right {
-    width: 500px;
+    width: 450px;
     top: 22%;
     left: 67%;
 }
@@ -591,7 +583,7 @@ input[type="checkbox"]{
 }
 .bottom-center p{
     margin-top: 10px;
-    width: 650px;
+    width: 700px;
     margin-left: -80px;
 }
 
@@ -607,12 +599,14 @@ input[type="checkbox"]{
     background-color: #F8C400;
 }
 .eve{
+    width: 100px;
     margin-top: -70px;
     font-size: 22px;
     font-weight: 400;
     margin-left: 130px;
 }
 .event{
+    width: 200px;
     margin-bottom: 40px;
     font-size: 20px;
     font-weight: 700;
@@ -631,7 +625,7 @@ input[type="checkbox"]{
     border-radius: 50%;
     width: 20%;
     top: 5%;
-    right: 25%;
+    right: 25%;/
 }
 .overlay-bottom-left {
     width: 20%;
@@ -956,7 +950,7 @@ input[type="checkbox"]{
 }
 
 .content-one {
-    width: 100vw;
+    width: 100%;
 }
 
 .content-one p {
@@ -1012,8 +1006,8 @@ p {
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 100px;
-    margin-left: -100px;
+    margin-top: 150px;
+    margin-left: -20px;
     border: 1px dashed #F2C94C;
 }
 /* second SOPA DEVELOPMENT PROGRAM............................................... */
@@ -1033,7 +1027,7 @@ p {
 
 }
 .prog-section {
-    height: 600px;
+    height: 550px;
     display: flex;
     gap: 10px;
     transition: all 0.5s ease-in-out;
@@ -1107,6 +1101,9 @@ p {
 .heading {
     text-align: center;
     margin-bottom: 20px;
+}
+.plan-label{
+    margin-top: 40px;
 }
 .plan-label span{
     background-color: #FFEDB4;
@@ -1193,7 +1190,7 @@ p {
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    margin-left: 80px;
+    left: 60px;
     margin-top: 50px;
 }
 .btn-container:hover{
@@ -1245,7 +1242,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 5px;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 .m-dot {
     width: 12px;
@@ -1261,27 +1258,21 @@ p {
     width: 25px;
     border-radius: 10px;
 }
+/* @media (min-width: 320px){
+    
+}
+@media (min-width: 426px){
+    
+}
 @media (min-width: 768px) {
-    .plan {
-        max-width: 45%;
-    }
-    .btn-container{
-        margin-left: 50px;
-    }
+    
 }
 @media (min-width: 1024px) {
-    .plan {
-        max-width: 30%;
-    }
-    .btn-container{
-        margin-left: 50px;
-    }
+    
 }
 @media (min-width: 1440px) {
-    .plan {
-        max-width: 28%;
-    }
-}
+    
+} */
 
 /* news & update section...................... */
 .news-update{
@@ -1290,6 +1281,7 @@ p {
     font-weight: 800;
     line-height: 100px;
     text-transform: uppercase;
+    margin-top: 40px;
 
 }
 .container-two {
@@ -1575,7 +1567,7 @@ p {
     color: white;
 }
 .line3{
-    width: 100vw;
+    width: 100%;
     background-color: white;
 }
 
@@ -1614,6 +1606,7 @@ p {
 }
 
 .social-icons a {
+    text-decoration: none;
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -1715,10 +1708,24 @@ p {
       width: 24%;
       margin-top: -20px;
     }
+    .plan {
+        max-width: 28%;
+    }
 
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1024px) {
+    /* .hero{
+        height: 100vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+    } */
+    .plan {
+        max-width: 30%;
+    }
+    .btn-container{
+        margin-left: -30px;
+    }
     .container{
         padding: 0 15px;
     }
@@ -1855,9 +1862,21 @@ p {
     .line2{
         width: 45.6%;
     }
+    .experience-btn{
+        margin-left: -200px;
+    }
   }
 
   @media screen and (max-width: 768px) {
+    
+    .plan {
+        max-width: 45%;
+    }
+    .btn-container{
+        position: relative;
+        /* margin-left: 1px; */
+        left: 80px;
+    }
   
     .auction-card,
     .auction-card-one,
@@ -1942,6 +1961,14 @@ p {
     
   }
   @media screen and (max-width: 426px){
+    .plan {
+        max-width: 95%;
+    }
+    .btn-container{
+        position: relative;
+        left: 100px;
+
+    }
     .auction-container{
         display: none;
     }
@@ -2002,15 +2029,16 @@ p {
     .photo-frame{
         margin-left: -200px;
     }
+    
     .content-one{
         width: 500px;
-        margin-left: -25px;
+        margin-left: -40px;
     }
     .quote-icon{
         margin-left: -40px;
     }
     .experience-btn{
-        margin-left: 50px;
+        margin-left: 65px;
     }
     .left-section .overlay{
         width: 80%;
@@ -2036,9 +2064,13 @@ p {
     .prog-content p{
         font-size: 12px;
     }
+    
   }
   
   @media screen and (max-width: 376px){
+    .overlay{
+        width: 120px;
+    }
     .overlay-bottom-left{
         top: 17%;
     }
@@ -2063,7 +2095,7 @@ p {
         margin-left: -70px;
     }
     .experience-btn{
-        margin-left: 60px;
+        margin-left: 70px;
     }
     .newsletter{
         margin-left: 80px;
@@ -2080,13 +2112,24 @@ p {
     .footer-bottom-links a{
         font-size: 12px;
     }
+    .btn-container{
+        margin-left: -60px;
+    }
   }
   @media screen and (max-width: 320px){
+   
+    .btn-container{
+        margin-left: -80px;
+    }
+    
     .overlay-bottom-left{
         margin-top: -40px;
     }
     .bottom-center p{
         margin-left: -125px;
+    }
+    .chairman{
+        margin-left: -8px;
     }
     .dots-bg-left{
         margin-left: 38px;
@@ -2103,21 +2146,24 @@ p {
         height: 400px;
     }
     .content-one h1{
+        margin-left: -50px;
         font-size: 25px;
     }
     .content-one p{
+        margin-left: -10px;
         font-size: 15px;
         width: 90%;
     }
     .quote-icon{
-        margin-left: 15px;
+        margin-left: 1px;
+    }
+    .experience-btn{
+        margin-left: 40px;
     }
     .prog-content p{
         font-size: 9px;
     }
-    .btn-container{
-        margin-left: 25px;
-    }
+    
     .container-two .overlay{
         margin-bottom: -20px;
     }
@@ -2132,6 +2178,9 @@ p {
     }
     .line2{
         width: 36%;
+    }
+    .social-icons a{
+        font-size: 10px;
     }
   }
  
