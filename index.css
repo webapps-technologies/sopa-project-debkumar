@@ -19,8 +19,9 @@ nav{
     background-color: #1F1A17;
 }
 .container{
+    width: 100%;
     max-width: 1380px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .top-header {
@@ -300,56 +301,59 @@ input[type="checkbox"]{
 /* hero section....................... */
 
 .hero {
-    background-image: url('./assests/back-img.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    width: 100%;
-    padding: 50px 0;
     position: relative;
+    width: 100%;
     min-height: 800px;
-    height: 100%;
+    overflow: hidden;
 }
 
-.hero:before {
-    content: '';
+.hero-img {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    /* background-position: center; */
+    /* object-fit: cover; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay-hero {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%,);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    /* z-index: 2; */
 }
 
-.hero:after {
-    content: '';
+.bottom-gradient {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 250px;
-    background: linear-gradient(to top, rgba(255,204,0,0.7) 50%, rgba(255,204,0,0) 100%);
-
+    background: linear-gradient(to top, rgba(255, 204, 0, 0.7) 50%, rgba(255, 204, 0, 0) 100%);
+    z-index: 2;
 }
 
 .hero-content {
-    position: absolute;
-    bottom: 120px;
-    left: 70px;
-    z-index: 2;
+    position: relative;
+    margin-top: 430px;
+    z-index: 3;
     max-width: 500px;
+    background: transparent;
 }
 
 .about-section {
     padding-left: 20px;
     margin-bottom: 10px;
-    
+    position: relative;
 }
 
-
-
 .about-title {
-    position: relative;
     color: black;
     font-size: 16px;
     margin-bottom: 10px;
@@ -364,7 +368,6 @@ input[type="checkbox"]{
 
 .story-description {
     color: #000;
-    max-width: 500px;
     line-height: 1.6;
     margin-bottom: 30px;
 }
@@ -380,19 +383,19 @@ input[type="checkbox"]{
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    margin-bottom: 20px;
 }
 
 .arrow-container {
     display: flex;
     align-items: center;
     margin-left: 15px;
-    position: relative;
     transition: all 0.3s;
 }
-.arrow-container:hover{
+
+.arrow-container:hover {
     transform: translateY(-10px);
 }
+
 .arrow {
     width: 30px;
     height: 30px;
@@ -405,12 +408,13 @@ input[type="checkbox"]{
     font-weight: bold;
 }
 
-.left-line{
+.left-line {
     position: absolute;
     margin-left: -20px;
     width: 5px;
     height: 170px;
     background-color: #000;
+    top: 0;
 }
 /* auction-section................... */
 
@@ -908,7 +912,7 @@ input[type="checkbox"]{
 
 .dots-bg-left {
     position: absolute;
-    width: 393px;
+    width: 390px;
     height: 172px;
     margin-left: 270px;
     margin-top: 55px;
@@ -1715,11 +1719,7 @@ p {
   }
 
   @media screen and (max-width: 1024px) {
-    /* .hero{
-        height: 100vh;
-        background-size: contain;
-        background-repeat: no-repeat;
-    } */
+    
     .plan {
         max-width: 30%;
     }
@@ -1838,7 +1838,7 @@ p {
       text-align: center;
     }
     .container-two{
-        margin: 0 10px;
+        margin: 0 0px;
     }
   
     .left-section {
@@ -1874,8 +1874,13 @@ p {
     }
     .btn-container{
         position: relative;
-        /* margin-left: 1px; */
         left: 80px;
+    }
+    .hero-img{
+        /* height: 100vh; */
+    }
+    .hero-content{
+        margin-top: 320px;
     }
   
     .auction-card,
@@ -1883,17 +1888,40 @@ p {
     .auction-card-two {
       width: 50%;
       height: 100px;
-      margin-top: -70px;
+      top: -90px;
+      
+      /* margin-top: -80px; */
+      /* z-index: 99999999; */
+    }
+    .bottom-gradient{
+        position: absolute;
+        /* bottom: 0; */
+        /* left: 0; */
+        /* right: 0; */
+        height: 300px;
+        /* background: linear-gradient(to top, rgba(255, 204, 1, 0.7) 50%, rgba(255, 204, 0, 0) 100%); */
+        /* z-index: 1; */
+    }
+    .auction-card-two,
+    .second-one{
+        border-top: 1px solid black;
+        /* position: relative; */
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+        /* margin-top: -1px; */
+        
     }
     
     .first-one{
-        border-top-right-radius: 10px;
+        border-top-right-radius: 20px;
         border-right: 0px solid black;
     }
   
     .auction-card-two {
         border-top-right-radius: 0px;
     }
+
+
     .overlay-top-right{
         top: 4%;
         left: 65%;
@@ -1919,6 +1947,7 @@ p {
     .container-one{
         flex-direction: column;
     }
+    
     .content-one{
         padding: 0 100px;
     }
@@ -1969,8 +1998,32 @@ p {
         left: 100px;
 
     }
+    .hero-img{
+        height: 100vh;
+    }
+    .bottom-gradient {
+        height: 450px;
+        background: linear-gradient(to top, rgba(255, 204, 0, 0.7) 50%, rgba(255, 204, 0, 0) 100%);
+        /* z-index: 2; */
+    }
+    .hero-content{
+        margin-top: 200px;
+    }
     .auction-container{
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .auction-card,
+    .auction-card-one,
+    .auction-card-two {
+        
+      width: 100%;
+      height: 80px;
+      top: -200px;
+      
+      /* margin-top: -80px; */
+      /* z-index: 99999999; */
     }
     .main-image {
         width: 50%;
@@ -1995,7 +2048,10 @@ p {
         padding-left: 10px;
     }
     .bottom-center>p{
-        padding-right: 250px;
+        width: 150%;
+        max-width: 450px;
+        /* margin-left: 10px; */
+        /* padding-right: 250px; */
         margin-bottom: -50px;
     }
     .line-6 {
@@ -2030,10 +2086,7 @@ p {
         margin-left: -200px;
     }
     
-    .content-one{
-        width: 500px;
-        margin-left: -40px;
-    }
+    
     .quote-icon{
         margin-left: -40px;
     }
@@ -2091,9 +2144,9 @@ p {
         width: 350px;
         height: 400px;
     }
-    .content-one{
+    /* .content-one{
         margin-left: -70px;
-    }
+    } */
     .experience-btn{
         margin-left: 70px;
     }
@@ -2117,7 +2170,13 @@ p {
     }
   }
   @media screen and (max-width: 320px){
-   
+   /* html.body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+   } */
     .btn-container{
         margin-left: -80px;
     }
@@ -2145,7 +2204,10 @@ p {
         width: 350px;
         height: 400px;
     }
-    .content-one h1{
+    .content-one{
+        /* width: 80%; */
+    }
+    /* .content-one h1{
         margin-left: -50px;
         font-size: 25px;
     }
@@ -2156,7 +2218,7 @@ p {
     }
     .quote-icon{
         margin-left: 1px;
-    }
+    } */
     .experience-btn{
         margin-left: 40px;
     }
