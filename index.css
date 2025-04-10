@@ -311,8 +311,6 @@ input[type="checkbox"]{
     width: 100%;
     height: 100%;
     background-size: contain;
-    /* background-position: center; */
-    /* object-fit: cover; */
     position: absolute;
     top: 0;
     left: 0;
@@ -754,20 +752,18 @@ input[type="checkbox"]{
 }
 .card {
     background-color: #FFF9E5;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
     width: 23%;
     height: 250px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: hidden;
+    overflow: visible;
     cursor: pointer;
     transition: background-color 0.3s ease;
     position: relative;
     padding: 10px 10px 0 10px;
-    transition: all 0.3s;
-}
-.card:hover{
-    transform: translateY(40px);
+    transition: all 0.3s ease;
+    z-index: 1;
 }
 .card::after {
     content: '';
@@ -777,8 +773,8 @@ input[type="checkbox"]{
     width: 100%;
     height: 30px; 
     background-color: transparent; 
-    transition: background-color 0.3s ease;
-    z-index: 1;
+    transition: all 0.3s ease;
+    z-index: -1;
 }
 .card.active-card::after {
     background-color: inherit;
@@ -872,7 +868,6 @@ input[type="checkbox"]{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    animation: scrollButtons 5s linear infinite;
 }
 .analysis-buttons li {
     padding: 15px;
@@ -884,10 +879,6 @@ input[type="checkbox"]{
     color: #555;
     cursor: pointer;
     white-space: nowrap;
-}
-@keyframes scrollButtons {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100%); }
 }
 .analysis-btn {
     background-color: #fff;
@@ -1137,6 +1128,13 @@ p {
     max-width: 350px;
     box-sizing: border-box;
     transition: transform 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn{
+    from{opacity: 0; transform: translateX(50px);}
+    to{opacity: 1;transform: translateX(0);}
 }
 .plan:hover{
     background-color: #FFEDB4;
@@ -1222,6 +1220,16 @@ p {
     color: #3d2e2a;
     font-weight:bolder;
 }
+.btn-arrow-middle{
+    width: 40px;
+    height: 40px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
 .container-member {
     margin-bottom: 15px;
 }
@@ -1262,21 +1270,6 @@ p {
     width: 25px;
     border-radius: 10px;
 }
-/* @media (min-width: 320px){
-    
-}
-@media (min-width: 426px){
-    
-}
-@media (min-width: 768px) {
-    
-}
-@media (min-width: 1024px) {
-    
-}
-@media (min-width: 1440px) {
-    
-} */
 
 /* news & update section...................... */
 .news-update{
@@ -1761,33 +1754,6 @@ p {
     .auction-card-two {
       width: 25%;
     }
-    .container-story {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 100px 0;
-    }
-
-    .text-content {
-        position: relative;
-        text-align: center;
-        width: 90%;
-        max-width: 450px;
-    }
-
-    .top-left, .top-right, .bottom-center {
-        position: relative;
-        width: 100%;
-        max-width: 500px;
-        text-align: center;
-        left: 0;
-        right: 0;
-        top: auto;
-    }
-    .bottom-center>p{
-        padding: 0 100px;
-    }
-
     .main-image {
         width: 80%;
         max-width: 400px;
@@ -1801,19 +1767,44 @@ p {
         margin-top: -60px;
     }
     .overlay-bottom-left{
-        margin-bottom: 960px;
+        margin-bottom: 900px;
         margin-left: -40px;
+    }
+    .container-story {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .top-left, .top-right, .bottom-center {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        left: 0px;
+        top: 0;
+    }
+    .bottom-center>p{
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+        margin-left: 0px;
+    }
+    .para{
+        max-width: 500px;
+        width: 100%;
+        align-items: center;
     }
     .line-6{
         margin-left: 180px;
     }
     .eve{
-        top: 2%;
-        margin-left: -10px;
+        margin-left: 190px;
         margin-top: 5px;
     }
     .event{
-        margin-left: -10px;
+        margin-left: 140px;
     }
     .line-5{
         margin-left: 190px;
@@ -1876,9 +1867,7 @@ p {
         position: relative;
         left: 80px;
     }
-    .hero-img{
-        /* height: 100vh; */
-    }
+    
     .hero-content{
         margin-top: 320px;
     }
@@ -1889,26 +1878,14 @@ p {
       width: 50%;
       height: 100px;
       top: -90px;
-      
-      /* margin-top: -80px; */
-      /* z-index: 99999999; */
     }
     .bottom-gradient{
         position: absolute;
-        /* bottom: 0; */
-        /* left: 0; */
-        /* right: 0; */
         height: 300px;
-        /* background: linear-gradient(to top, rgba(255, 204, 1, 0.7) 50%, rgba(255, 204, 0, 0) 100%); */
-        /* z-index: 1; */
     }
     .auction-card-two,
     .second-one{
         border-top: 1px solid black;
-        /* position: relative; */
-        /* display: flex; */
-        /* flex-wrap: wrap; */
-        /* margin-top: -1px; */
         
     }
     
@@ -1920,8 +1897,6 @@ p {
     .auction-card-two {
         border-top-right-radius: 0px;
     }
-
-
     .overlay-top-right{
         top: 4%;
         left: 65%;
@@ -1929,10 +1904,8 @@ p {
     .overlay-bottom-left{
         left: 14%;
     }
-  
     .card {
       width: 45%;
-      margin-bottom: 20px;
     }
   
     .analysis-section {
@@ -1942,29 +1915,34 @@ p {
         width: 60%;
     }
     .chairman{
-        padding-left: 100px;
+        padding-left: 90px;
     }
     .container-one{
         flex-direction: column;
     }
     
     .content-one{
-        padding: 0 100px;
+        margin-left: 150px;
+        max-width: 500px;
+        width: 100%;
     }
     .quote-icon{
-        margin-left: 80px;
+        margin-left: 65px;
     }
     .experience-btn{
-        margin-left: 200px;
+        margin-left: 160px;
     }
     .container-two{
         grid-template-columns: 1fr;
     }
     .left-section{
-        width: 97%;
+        margin-left: 20px;
+        width: 95%;
     }
     .right-section{
-        width: 97%;
+        margin-left: 20px;
+        width: 95%;
+
     }
     .prog-section {
       flex-wrap: wrap;
@@ -2007,7 +1985,11 @@ p {
         /* z-index: 2; */
     }
     .hero-content{
-        margin-top: 200px;
+        margin-left: -20px;
+        margin-top: 220px;
+    }
+    .about-title{
+        color: white;
     }
     .auction-container{
         display: flex;
@@ -2020,17 +2002,20 @@ p {
         
       width: 100%;
       height: 80px;
-      top: -200px;
-      
-      /* margin-top: -80px; */
-      /* z-index: 99999999; */
+      top: -196px;
+      border: 0;
+    }
+    .first-one{
+        border-radius: 0px;
+    }
+    .auction-card{
+        border-top-right-radius: 20px;
     }
     .main-image {
         width: 50%;
     }
     .overlay{
         width: 30%;
-        background: transparent;
     }
     .overlay-top-right{
         left: 60%;
@@ -2038,20 +2023,20 @@ p {
     }
     .overlay-bottom-left{
         left: 18%;
-        bottom: 15%;
+        bottom: 14%;
     }
     .text-content{
         width: 80%;
         max-width: 425px;
     }
-    .top-right{
-        padding-left: 10px;
+    .eve{
+        margin-left: 110px;
     }
+    .event{
+        margin-left: 60px;
+    }
+    
     .bottom-center>p{
-        width: 150%;
-        max-width: 450px;
-        /* margin-left: 10px; */
-        /* padding-right: 250px; */
         margin-bottom: -50px;
     }
     .line-6 {
@@ -2064,6 +2049,7 @@ p {
         height: 270px;
     }
     .analysis-section{
+        height: 570px;
         flex-direction: column;
     }
     .analysis-content{
@@ -2085,19 +2071,37 @@ p {
     .photo-frame{
         margin-left: -200px;
     }
-    
-    
+    .chairman{
+        margin-left: 10px;
+    }
+    .content-one{
+        margin-left: 35px;
+    }
+    .content-one h1{
+        margin-left: -10px;
+    }
+    .content-one p{
+        text-align: justify;
+    }
     .quote-icon{
-        margin-left: -40px;
+        margin-left: -30px;
     }
     .experience-btn{
-        margin-left: 65px;
+        margin-left: 85px;
+    }
+    .container-two{
+        margin-left: -10px;
+        padding: 0 10px;
     }
     .left-section .overlay{
         width: 80%;
     }
     .banner{
+        gap: 40px;
         flex-direction: column;
+    }
+    .newsletter{
+        margin-left: 80px;
     }
     .footer-bottom-links{
         margin-bottom: 60px;
@@ -2127,16 +2131,13 @@ p {
     .overlay-bottom-left{
         top: 17%;
     }
-    .bottom-center p{
-        margin-left: -110px;
-    }
     .dots-bg-left{
         margin-left: 50px;
         margin-top: 30px;
     }
     .dots-bg-right{
         margin-left: -25px;
-        bottom: 68%;
+        bottom: 69.5%;
     }
     .photo-frame img{
         margin-left: 110px;
@@ -2144,9 +2145,12 @@ p {
         width: 350px;
         height: 400px;
     }
-    /* .content-one{
-        margin-left: -70px;
-    } */
+    .cards-container{
+        margin-bottom: 20px;
+    }
+    .card::after{
+        bottom: -30px;
+    }
     .experience-btn{
         margin-left: 70px;
     }
@@ -2170,13 +2174,12 @@ p {
     }
   }
   @media screen and (max-width: 320px){
-   /* html.body{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-   } */
+    .hero-content{
+        margin-top: 200px;
+    }
+    .know-more{
+        margin-top: -20px;
+    }
     .btn-container{
         margin-left: -80px;
     }
@@ -2184,8 +2187,11 @@ p {
     .overlay-bottom-left{
         margin-top: -40px;
     }
-    .bottom-center p{
-        margin-left: -125px;
+    .eve{
+        margin-left: 75px;
+    }
+    .event{
+        margin-left: 30px;
     }
     .chairman{
         margin-left: -8px;
@@ -2196,7 +2202,7 @@ p {
     }
     .dots-bg-right{
         margin-left: -45px;
-        bottom: 68%;
+        bottom: 72.5%;
     }
     .photo-frame img{
         margin-left: 90px;
@@ -2204,21 +2210,7 @@ p {
         width: 350px;
         height: 400px;
     }
-    .content-one{
-        /* width: 80%; */
-    }
-    /* .content-one h1{
-        margin-left: -50px;
-        font-size: 25px;
-    }
-    .content-one p{
-        margin-left: -10px;
-        font-size: 15px;
-        width: 90%;
-    }
-    .quote-icon{
-        margin-left: 1px;
-    } */
+  
     .experience-btn{
         margin-left: 40px;
     }
