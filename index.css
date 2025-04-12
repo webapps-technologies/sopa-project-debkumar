@@ -13,6 +13,7 @@
 
 body {
     font-family: "Inter", sans-serif; 
+    overflow-x: hidden;
 }
 nav{
     width: 100%;
@@ -211,7 +212,7 @@ input[type="checkbox"]{
     .nav-container ul{
       position: fixed;
       top: 110px;
-      left: -100%;
+      left: -150%;
       background: #111;
       height: auto;
       width: 768px;
@@ -258,7 +259,7 @@ input[type="checkbox"]{
     .nav-container ul{
       position: fixed;
       top: 110px;
-      left: -100%;
+      left: -150%;
       background: #111;
       height: auto;
       width: 425px;
@@ -745,7 +746,7 @@ input[type="checkbox"]{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 30px; 
     position: relative;
     
@@ -765,17 +766,35 @@ input[type="checkbox"]{
     transition: all 0.3s ease;
     z-index: 1;
 }
+/* .rectengle-left{
+    width: 400px;
+    height: 30px;
+    margin-top: 500px;
+} */
+/* .radius{
+    background-color: #ffb400;
+    height: 200px;
+    clip-path: path(M0,0 H100% Vcalc(100%));
+} */
 .card::after {
     content: '';
     position: absolute;
     bottom: -30px; 
     left: 0;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     width: 100%;
     height: 30px; 
     background-color: transparent; 
     transition: all 0.3s ease;
     z-index: -1;
 }
+/* .card::after{
+    content: '◞';
+    position: relative;
+    margin-top: 20px;
+    margin-left: 50px;
+} */
 .card.active-card::after {
     background-color: inherit;
 }
@@ -1006,7 +1025,7 @@ p {
     border: 1px dashed #F2C94C;
 }
 /* second SOPA DEVELOPMENT PROGRAM............................................... */
-.prog-heading{
+.program-heading{
     text-align: center;
     font-size: 30px;
     font-style: solid;
@@ -1018,23 +1037,24 @@ p {
     text-decoration-style: solid;
     text-decoration-thickness: 10%;
     margin-bottom: 20px;
-
-
 }
-.prog-section {
+.program-section {
     height: 550px;
     display: flex;
     gap: 10px;
-    transition: all 0.5s ease-in-out;
+}
+/* .program-section:hover .box {
+    width: 15%;
+} */
+.program-section .box:hover {
+    width: 50%;
 }
 .wide-box {
-    width: 50%; 
+    width: 40%; 
 }
-
 .small-box {
     width: 20%;
 }
-
 .box {
     height: 550px;
     background-size: cover;
@@ -1044,52 +1064,47 @@ p {
     overflow: hidden;
     transition: width 0.5s ease-in-out;
 }
-.prog-section:hover .box {
-    width: 15%;
-}
-
-.prog-section .box:hover {
-    width: 50%;
-}
 #box1 {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 204, 0, 0.7) 100%), url('./assests/image18.png');
-    padding: 20px;
+    padding: 20px ;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     text-align: center;
 }
-#box1 .prog-content {
+
+#box1 .program-content {
     width: 90%;
     color: black;
 }
-.prog-content a{
+.program-content a{
     text-decoration: none;
     color: #000;
 }
-.prog-content p{
+.program-content p{
     color: #000;
 }
-.vertical-text {
+.program-text {
     transform: rotate(-90deg);
     transform-origin: center;
-    position: absolute;
-    bottom: 120px;
-    left: 10px;
+    position: relative;
+    width: 250px;
+    top: 350px;
+    /* left: 40px; */
     font-size: 28px;
     font-weight: bold;
     color: black;
 }
 #box2 {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 204, 0, 0.7) 100%), url('./assests/image19.png');
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, #FFD475 100%), url('./assests/image19.png');
 }
 
 #box3 {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 204, 0, 0.7) 100%), url('./assests/image20.png');
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, #FFD475 100%), url('./assests/image20.png');
 }
 
 #box4 {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 204, 0, 0.7) 100%),  url('./assests/image21.png');
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, #FFD475 100%),  url('./assests/image21.png');
 }
 
 /* membership section.......................... */
@@ -1708,7 +1723,15 @@ p {
     .plan {
         max-width: 28%;
     }
-
+    .wide-box {
+        width: 30%; 
+    }
+    .small-box {
+        width: 20%;
+    }
+    .program-section .box:hover {
+        width: 40%;
+    }
   }
 
   @media screen and (max-width: 1024px) {
@@ -1944,15 +1967,30 @@ p {
         width: 95%;
 
     }
-    .prog-section {
-      flex-wrap: wrap;
-      height: auto;
+    .program-section {
+        height: 350px;
+        display: flex;
+        gap: 10px;
     }
     .box {
-      width: 48%;
+      width: 100%;
       margin-bottom: 20px;
-      height: 300px;
+      height: 350px;
     }
+    .program-section .box:hover {
+        width: 50%;
+    }
+    .wide-box {
+        width: 40%; 
+    }
+    .small-box {
+        width: 20%;
+    }
+    .program-text{
+        left: -50px;
+        top: 200px;
+    }
+    
     .footer-column {
       width: 20%;
     }
@@ -2045,8 +2083,13 @@ p {
     .line-5{
         display: none;
     }
-    .card{
+    /* .card{
         height: 270px;
+    } */
+    .cards-container{
+        gap: 10px;
+        display: flex;
+        flex-wrap: wrap;
     }
     .analysis-section{
         height: 570px;
@@ -2115,11 +2158,25 @@ p {
     .line2{
         width: 39.3%;
     }
-    .prog-content h2{
+    .program-content h2{
         font-size: 15px;
     }
-    .prog-content p{
+    .program-content p{
         font-size: 12px;
+    }
+    .program-section{
+        display: flex;
+        max-width: 390px;
+        width: 100%;
+    }
+    .wide-box {
+        width: 30%; 
+    }
+    .small-box {
+        width: 15%;
+    }
+    .program-section .box:hover {
+        width: 40%;
     }
     
   }
@@ -2214,7 +2271,7 @@ p {
     .experience-btn{
         margin-left: 40px;
     }
-    .prog-content p{
+    .program-content p{
         font-size: 9px;
     }
     
